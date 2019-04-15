@@ -13,3 +13,9 @@ export const updateSearchTerm = searchTerm => ({
   type: UPDATE_SEARCH_TERM,
   payload: searchTerm
 });
+
+export const UPDATE_FILTER_VALUE = 'UPDATE_FILTER_VALUE';
+export const updateFilterValue = filterValue => ({
+  type: UPDATE_FILTER_VALUE,
+  payload: filterValue
+});
