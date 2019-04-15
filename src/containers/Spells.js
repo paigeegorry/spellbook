@@ -1,14 +1,17 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { getSpells } from '../selectors/spells';
-import { fetchSpells } from '../actions/spells';
+import { getSpells, getSearchTerm } from '../selectors/spells';
+import { fetchSpells, updateSearchTerm } from '../actions/spells';
 import PropTypes from 'prop-types';
 import SpellList from '../components/spells/SpellList';
+import SpellForm from '../components/spells/SpellForm';
 
 class Spells extends React.PureComponent {
   static propTypes = {
     fetch: PropTypes.func.isRequired,
-    spells: PropTypes.array.isRequired
+    spells: PropTypes.array.isRequired,
+    searchTerm: PropTypes.string,
+    onChange: PropTypes.func.isRequired
   }
 
   componentDidMount() {
@@ -22,6 +25,7 @@ class Spells extends React.PureComponent {
     
     return (
       <>
+        <SpellForm searchTerm={this.props.searchTerm} onChange={this.props.onChange} />
         <SpellList spells={spells} />
       </>
     );
@@ -29,12 +33,16 @@ class Spells extends React.PureComponent {
 }
 
 const mapStateToProps = state => ({
-  spells: getSpells(state)
+  spells: getSpells(state),
+  searchTerm: getSearchTerm(state)
 });
 
 const mapDispatchToProps = dispatch => ({
   fetch() {
     dispatch(fetchSpells());
+  },
+  onChange({ target }) {
+    dispatch(updateSearchTerm(target.value));
   }
 });
 
