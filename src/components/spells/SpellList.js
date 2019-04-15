@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Spell from './Spell';
+import { List } from './SpellStyles';
 
 export default function SpellList({ spells }) {
   const spellList = spells.map(spell => {
@@ -13,9 +14,11 @@ export default function SpellList({ spells }) {
   });
 
   return (
-    <ul>
-      {spellList}
-    </ul>
+    <List>
+      <ul>
+        {spellList}
+      </ul>
+    </List>
   );
 }
 
