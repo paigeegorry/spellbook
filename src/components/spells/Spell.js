@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 export default function Spell({ spell }) {
   return (
     <li key={spell._id}>
-      <h3>{spell.spell}</h3>
+      <h3>{spell.spell.toLowerCase()}</h3>
       <p>{spell.type}</p>
       <p>{spell.effect}</p>
     </li>
