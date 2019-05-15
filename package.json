@@ -1,5 +1,5 @@
 {
-  "name": "redux-blog",
+  "name": "spellbook",
   "version": "1.0.0",
   "description": "",
   "main": "webpack.config.js",
@@ -17,13 +17,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/duckgron/redux-blog.git"
+    "url": "git+https://github.com/spellbook.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/duckgron/redux-blog/issues"
+    "url": "https://github.com/spellbook/issues"
   },
   "dependencies": {
     "dotenv": "^7.0.0",
@@ -73,5 +73,5 @@
     "webpack-cli": "^3.2.3",
     "webpack-dev-server": "^3.1.14"
   },
-  "homepage": "https://github.com/duckgron/redux-blog#readme"
+  "homepage": "https://github.com/spellbook#readme"
 }

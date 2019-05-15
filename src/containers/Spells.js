@@ -17,11 +17,7 @@ class Spells extends React.PureComponent {
   componentDidMount() {
     this.props.fetch();
   }
-
-  componentDidUpdate() {
-    
-  }
-
+ 
   render() {
     const spells = this.props.spells.sort((a, b) => {
       return a.spell - b.spell;
